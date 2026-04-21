@@ -19,8 +19,12 @@ jobs:
         uses: android-actions/setup-android@v3
       - name: Grant Gradle wrapper permissions
         run: chmod +x gradlew
+      - name: Configure Gradle memory
+        run: |
+          echo "org.gradle.jvmargs=-Xmx6g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -XX:+UseParallelGC -XX:MaxMetaspaceSize=1g" >> gradle.properties
+          echo "org.gradle.workers.max=2" >> gradle.properties
       - name: Build generic debug APK
-        run: ./gradlew assembleGenericDebug --no-daemon --stacktrace
+        run: ./gradlew assembleGenericDebug --stacktrace
       - name: Rename APK
         run: |
           mkdir -p out
