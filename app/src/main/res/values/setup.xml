@@ -131,7 +131,7 @@
     <string name="webview_login_url" translatable="false"></string>
 
     <!--    [{\"name\":\"name1\",\"url\":\"url\"},{\"name\":\"name2\",\"url\":\"url1\"}]-->
-    <string name="enforce_servers" translatable="false">[{"name":"The Cloud Market","url":"https://thecloudmarket.thecloud.market"}]</string>
+    <string name="enforce_servers" translatable="false"></string>
 
     
     <!-- Files becomes Home -->
